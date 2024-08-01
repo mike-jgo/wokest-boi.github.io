@@ -1,0 +1,467 @@
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,500&display=swap');
+
+/* include imports and @ stuff */
+:root {
+    --darkBlue: rgb(22, 72, 99);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #caf0f8;
+}
+.activeb {
+  color: rgb(108, 180, 221);
+}
+
+
+/* common */
+#topNavBar-container {
+    height: 105px;
+    width: 100%;
+    background-color: var(--darkBlue);    
+    font-family: 'Krona One', sans-serif;
+    display: flex;
+    position: sticky;
+    top: 0;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    padding: 20px 14%;
+    margin-bottom: 100px;
+}
+
+#logo{
+    width: 75px;
+    height: 75px;
+}
+#tabs-container {
+    display: flex;
+    padding-left: 85px;
+}
+
+#tabs-icon i{
+    font-size: 32px;
+    margin-right: 20px;
+    transition: all .36s ease;
+    color: white;
+}
+
+.nav-tab {
+    padding: 10px 25px;
+    transition: transform 0.3s ease; /* Add transition for smoother animation */
+}
+#homeTab {
+    color: white;
+}
+#aboutTab {
+    color: white;
+}
+#prodTab {
+    color: white;
+}
+#locTab {
+    color: white;
+}
+#OLTab {
+    color: white;
+}
+#botNavBar-container {
+    height: 110px;
+    width: 100%;
+    background-color: rgb(22, 72, 99);    
+    font-family: 'Krona One', sans-serif;
+    display: flex;
+    bottom: 0;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    align-items: absolute;
+    z-index: 10;
+}
+#logo-bot{
+    padding-left: 600px;
+}
+#info{
+    display: flex;
+    flex-grow: 1;  
+    color: white;
+}
+#find{
+    color: white;
+    width:15em;
+    text-align:center;
+    padding-top: 8px;
+}
+#addr{
+    padding-top: 10px;
+}
+#contact{
+    color: white;
+    width:10em;
+    text-align:center;
+    padding-top: 8px;
+}
+#num{
+    padding-top: 10px;
+}
+#socials{
+    color: white;
+    width:10em;
+    text-align:center;
+    padding-top: 8px;
+}
+#soc{
+    padding-top: 10px;
+}
+#botNavBar-container span {
+    display: inline-block;
+    width: 7px; 
+    height: 100px;
+    background-color: white;
+    margin: 5px 10px 0; 
+    border-radius: 50px;
+}
+
+
+/* Add this CSS to your existing stylesheet */
+
+
+.tabsName {
+    position: relative; /* Ensure the underline is relative to the text */
+    text-decoration: none; /* Remove default underline */
+    transition: font-size 0.3s ease; /* Add transition for font size */
+    font-weight: 600;
+    font-size: large;
+    cursor: pointer;
+}
+
+
+.tabsName::after {
+    content: ''; /* Add a pseudo-element for the underline */
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Adjust the position of the underline */
+    width: 0;
+    height: 2px;
+    background-color: #fff; /* Color of the underline */
+    transition: width 0.3s ease; /* Add animation to the underline */
+}
+
+.tabsName:hover::after {
+    width: 100%; /* Expand the width of the underline on hover */
+}
+
+
+.nav-tab:hover {
+    cursor: pointer;
+    transform: scale(1.05); /* Scale up the tab on hover */
+}
+
+.content-container {
+    width: auto;
+    padding: 5%;
+}
+
+/* location page */
+
+.loc-container{
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+iframe{
+    width: 80%;
+    height: 400px;
+}
+
+
+#upperBox {
+    border-bottom: #333 1px solid;
+    height: 70vh;
+
+    display: flex;
+}
+
+.home-intro{
+    padding-top: 90px;
+    padding-left:50px;
+    max-width: 950px;
+}
+
+.home-intro h1, .home-intro p, .learn-button{
+    margin:0 50px;
+}
+.home-intro h1{
+    font-size: 50px;
+    font-weight: bolder;
+    color: #333;
+    font-family: "IBM Plex Mono", monospace;
+}
+
+.home-intro p{
+    font-size: 25px;
+    color: #333;
+    padding-top: 10px;
+    font-family: "IBM Plex Mono", monospace;
+
+}
+
+.learn-button {
+    display: block;
+    margin-top: 20px; /* Adjust spacing between text and button */
+    padding: 10px 20px;
+    background-color: rgb(32, 105, 145) ; /* Example background color */
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.learn-button:hover {
+    background-color: rgb(22, 72, 99); /* Example hover background color */
+}
+
+#secondBox{
+    background:#CAF0F8 ;
+    border-bottom:#333 1px solid;
+    height:50vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+}
+
+.second-intro{
+    padding-top:25px;
+    display:flex;
+    justify-content: center;
+    font-size:50px;
+    font-family: "IBM Plex Mono", monospace;
+    font-style: normal;
+    font-weight:700;
+    
+}
+
+.second-body{
+    padding-top:10px;
+    font-size:25px;
+    display:flex;
+    justify-content: center;
+    font-family: "IBM Plex Mono", monospace;
+    font-style: normal;
+}
+
+.image-container p{
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    font-family: "IBM Plex Mono", monospace;
+    font-style: normal;
+    font-weight:700;
+
+}
+
+.secondBoxImages {
+    display: flex;
+    justify-content: space-around; /* Adjust the spacing between images */
+    align-items: center;
+    padding-top: 40px; /* Add margin-top to separate images from the text */
+}
+
+.secondBoxImages img{
+    width: 125px;
+    height: 125px;
+    margin: 0 80px; /* Adjust the margin as needed */
+}
+
+#thirdBox{
+    border-bottom:#333 1px solid;
+    padding:40px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#delivery-info h1{
+    font-size: 50px;
+    font-weight: bolder;
+    font-family: "IBM Plex Mono", monospace;
+}
+
+#delivery-info p{
+    font-size: 25px;
+    font-family: "IBM Plex Mono", monospace;
+    text-align: center;
+    align-items: center;
+}
+
+#location-div {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.location-button {
+    display: block;
+    padding:5px;
+    margin-top: 20px; /* Adjust spacing between text and button */
+    padding: 10px 20px;
+    background-color: rgb(32, 105, 145) ; /* Example background color */
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: white;
+}
+
+.fa-brands {
+    transition: color 0.3s ease;
+    padding-top: 20px;
+    padding-right:4px;
+    font-size:50px;
+}
+
+.fa-brands:hover {
+    color:#1877F2 !important;
+}
+
+.wrapper{
+    width: 380px;
+    padding: 40px 30px 50px 30px;
+    background: #fff;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.1);
+    margin: 0 auto;
+}
+.wrapper header{
+  font-size: 35px;
+  font-weight: 600;
+}
+.wrapper form{
+  margin: 40px 0;
+}
+form .field{
+  width: 100%;
+  margin-bottom: 20px;
+}
+form .field.shake{
+  animation: shake 0.3s ease-in-out;
+}
+@keyframes shake {
+  0%, 100%{
+    margin-left: 0px;
+  }
+  20%, 80%{
+    margin-left: -12px;
+  }
+  40%, 60%{
+    margin-left: 12px;
+  }
+}
+form .field .input-area{
+  height: 50px;
+  width: 100%;
+  position: relative;
+}
+form input{
+  width: 100%;
+  height: 100%;
+  outline: none;
+  padding: 0 45px;
+  font-size: 18px;
+  background: none;
+  caret-color: #5372F0;
+  border-radius: 5px;
+  border: 1px solid #bfbfbf;
+  border-bottom-width: 2px;
+  transition: all 0.2s ease;
+}
+form .field input:focus,
+form .field.valid input{
+  border-color: #5372F0;
+}
+form .field.shake input,
+form .field.error input{
+  border-color: #dc3545;
+}
+.field .input-area i{
+  position: absolute;
+  top: 50%;
+  font-size: 18px;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+.input-area .icon{
+  left: 15px;
+  color: #bfbfbf;
+  transition: color 0.2s ease;
+}
+.input-area .error-icon{
+  right: 15px;
+  color: #dc3545;
+}
+form input:focus ~ .icon,
+form .field.valid .icon{
+  color: #5372F0;
+}
+form .field.shake input:focus ~ .icon,
+form .field.error input:focus ~ .icon{
+  color: #bfbfbf;
+}
+form input::placeholder{
+  color: #bfbfbf;
+  font-size: 17px;
+}
+form .field .error-txt{
+  color: #dc3545;
+  text-align: left;
+  margin-top: 5px;
+}
+form .field .error{
+  display: none;
+}
+form .field.shake .error,
+form .field.error .error{
+  display: block;
+}
+form .pass-txt{
+  text-align: left;
+  margin-top: -10px;
+}
+.wrapper a{
+  color: var(--darkBlue);
+  text-decoration: none;
+}
+.wrapper a:hover{
+  text-decoration: underline;
+}
+form input[type="submit"]{
+  height: 50px;
+  margin-top: 30px;
+  color: #fff;
+  padding: 0;
+  border: none;
+  background: #5372F0;
+  cursor: pointer;
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+form input[type="submit"]:hover{
+  background: var(--darkBlue);
+}

@@ -1,0 +1,459 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,500&display=swap');
+
+/* include imports and @ stuff */
+:root {
+    --darkBlue: rgb(22, 72, 99);
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* common */
+#topNavBar-container {
+    height: 105px;
+    width: 100%;
+    background-color: var(--darkBlue);    
+    font-family: 'Krona One', sans-serif;
+    display: flex;
+    position: sticky;
+    top: 0;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    padding: 20px 14%;
+}
+
+#logo{
+    width: 75px;
+    height: 75px;
+}
+#tabs-container {
+    display: flex;
+    padding-left: 85px;
+}
+
+#tabs-icon i{
+    font-size: 32px;
+    margin-right: 20px;
+    transition: all .36s ease;
+    color: white;
+}
+
+.nav-tab {
+    padding: 10px 25px;
+    transition: transform 0.3s ease; /* Add transition for smoother animation */
+}
+#homeTab {
+    color: white;
+}
+#aboutTab {
+    color: white;
+}
+#locTab {
+    color: white;
+}
+#OLTab {
+    color: white;
+}
+
+#botNavBar-container {
+    height: 110px;
+    width: 100%;
+    background-color: rgb(22, 72, 99);    
+    font-family: 'Krona One', sans-serif;
+    display: flex;
+    justify-content: space-around; /* Distribute space evenly */
+    align-items: center; /* Center items vertically */
+    /* position: fixed; Fix the position at the bottom */
+    bottom: 0;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+#logo-bot{
+    padding-left: 0; /* Remove padding */
+}
+#info, #find, #contact, #socials {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    color: white;
+}
+
+#find, #contact, #socials {
+    width: auto; /* Adjust width to content */
+    text-align: center;
+    padding-top: 0; /* Remove padding */
+}
+
+#addr, #num, #soc {
+    padding-top: 10px;
+}
+
+#botNavBar-container span {
+    display: inline-block;
+    width: 7px; 
+    height: 100px;
+    background-color: white;
+    margin: 5px 10px 0; 
+    border-radius: 50px;
+}
+
+.tabsName {
+    position: relative; /* Ensure the underline is relative to the text */
+    text-decoration: none; /* Remove default underline */
+    transition: font-size 0.3s ease; /* Add transition for font size */
+    font-weight: 600;
+    font-size: large;
+    cursor: pointer;
+}
+
+
+.tabsName::after {
+    content: ''; /* Add a pseudo-element for the underline */
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Adjust the position of the underline */
+    width: 0;
+    height: 2px;
+    background-color: #fff; /* Color of the underline */
+    transition: width 0.3s ease; /* Add animation to the underline */
+}
+
+.tabsName:hover::after {
+    width: 100%; /* Expand the width of the underline on hover */
+}
+
+
+.nav-tab:hover {
+    cursor: pointer;
+    transform: scale(1.05); /* Scale up the tab on hover */
+}
+
+.content-container {
+    width: auto;
+    padding: 5%;
+}
+
+/* location page */
+
+.loc-container{
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+iframe{
+    width: 80%;
+    height: 400px;
+}
+
+.fa-brands {
+    transition: color 0.3s ease;
+    padding-top: 20px;
+    padding-right:4px;
+    font-size:50px;
+}
+
+.fa-brands:hover {
+    color:#1877F2 !important;
+}
+
+/* User icon */
+.user-icon {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown container */
+.dropdown-content {
+    display: none; /* Initially hidden */
+    position: absolute;
+    right: 0;
+    top: 100%; /* Position directly below the user icon */
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1000;
+    opacity: 0; /* Start hidden for fade-in effect */
+    transform: translateY(-10px); /* Slightly moved up to create a smooth entrance */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+/* Show dropdown on hover */
+.user-icon:hover .dropdown-content {
+    display: block; /* Make visible */
+    opacity: 1; /* Fully opaque when hovered */
+    transform: translateY(0); /* Move to final position */
+}
+
+/* Dropdown items */
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f0f0f0;
+    color: #007bff; /* Accent color */
+}
+
+/* Optional: Adjust the user icon on hover */
+.user-icon:hover .bx {
+    color: #007bff !important; /* Accent color for user icon on hover */
+}
+
+
+/* my account section middle section*/
+.account-container {
+    width: 100%;
+    /* padding: 20px; */
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    /* margin: 20px 0; */
+    
+}
+
+.account-header {
+    /* background-image: url('../images/my-account-banner.jpg'); */
+    text-align: center;
+    margin-bottom: 20px;
+    height: 180px;
+    /* background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; Ensure the image doesn't repeat */
+    align-content: center;
+}
+
+.account-header::before {    
+    content: "";
+    background-image: url('../images/my-account-banner.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.5;
+    height: 280px;
+}
+
+.account-header h1 {
+    font-size: 3em;
+    color: var(--darkBlue);
+    position: relative;
+}
+
+.account-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #fff;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    margin-bottom: 20px;
+    overflow: hidden;
+    padding-left: 70px;
+}
+
+.sidebar h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--darkBlue);
+    margin-left: 0;
+    padding-left: 10px; /* Add padding to match list items */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    border-top: 1px solid #ddd;
+}
+
+.sidebar ul li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    display: block;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a.addresses {
+    color: #fff; /* Text color for the active item */
+    background-color: #007bff; /* Background color for the active item */
+    font-weight: bold;
+}
+
+.sidebar ul li a:hover, .sidebar ul li.active a {
+    background-color: #f0f0f0;
+    color: #007bff;
+}
+
+.activeb {
+    color: rgb(108, 180, 221);
+}
+
+.main-content {
+    flex: 3;
+    padding: 0 20px;
+    /* height: 470px; */
+}
+
+.main-content p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#shipping-address{
+    margin-bottom: 20px;
+}
+
+.address-section {
+    display: flex;
+    /* flex-direction: column; */
+    gap: 20px;
+    margin-right: 190px;
+    margin-bottom: 120px;
+}
+
+.address-block {
+    /* background-color: #f4f4f4; */
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    border-radius: 0.5rem;
+    width: 550px;
+}
+
+.address-block h3 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    font-size: 18px;
+}
+
+.address-block p {
+    font-style: italic;
+    font-size: small;
+}
+
+.edit-button {
+    text-decoration: none;
+    color: #8c8c8c;
+    font-size: small;
+}
+
+.edit-button:hover {
+    text-decoration: none;
+    color: #007bff;
+    font-size: small;
+}
+
+/* Container for first and last name fields */
+.name-fields {
+    display: flex;
+    margin-right: 150px;
+    gap: 20px;
+}
+
+/* Individual field styling */
+.name-field {
+    flex: 1; /* Makes each field take equal width */
+}
+
+/* Ensuring labels and inputs are aligned */
+.name-field label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.name-field input {
+    width: 100%;
+}
+
+.address-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.address-form label {
+    font-size: 14px;
+}
+
+.address-form input {
+    padding: 12px;
+    font-size: 14px;
+    border: 2px solid #e9e7e7;
+    border-radius: 5px;
+    margin-right: 150px;
+    margin-bottom: 15px;
+}
+
+.address-form button {
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 50px;
+    font-weight: bold;
+    margin-right: auto;
+}
+
+.address-form button:hover {
+    background-color: #0166d2;
+}
+
+.required {
+    color: red;
+    position: relative;
+    cursor: pointer;
+}
+
+.numItems {
+    font-size: medium;
+    font-weight: bold;
+    display: flex;
+    width: 25px;
+    height: 25px;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: 63px;
+}
+
+#tabs-icon{
+    position: relative;
+    display: inline-block;
+}

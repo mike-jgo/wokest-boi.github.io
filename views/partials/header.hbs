@@ -1,0 +1,125 @@
+<div id="topNavBar-container">
+        <div id="logo-top" onclick="window.location.href='/';">
+            <a href="#top">
+                <img id="logo" src="images\Oishi Great.png">
+            </a>
+        </div>
+        
+        <div id="tabs-container">
+            <div id="homeTab" class="nav-tab">
+                <p class="tabsName" onclick="window.location.href='/';">HOME</p>
+            </div>
+            <div id="aboutTab" class="nav-tab ">
+                <p class="tabsName" onclick="window.location.href='/about';">ABOUT</p>
+            </div>
+            <div id="locTab" class="nav-tab">
+                <p class="tabsName" onclick="window.location.href='/location';">LOCATION</p>
+            </div>
+        </div>
+
+        {{#if loggedIn}}
+            <div id="tabs-icon" class="nav-icons">
+                <a  onclick="window.location.href='/onlineshop';" style="cursor: pointer;"><i class='bx bx-store '></i></a>
+                <a style="cursor: pointer;"><i class='bx bx-cart '><span class="numItems">{{cartItemCount}}</span></i></a>
+                <div class="user-icon" id="userIcon">
+                    <a onclick="window.location.href='/login';" style="cursor: pointer;">
+                        <i class='bx bxs-face' style="color:;"></i>
+                    </a>
+                    <div class="dropdown-content" id="dropdownContent">
+                        <a href="/myaccount">My Account</a>
+                        <a href="#" id="logoutLink">Log Out</a>
+                    </div>
+                </div>
+            </div>
+        {{else}}
+            <div id="tabs-icon">
+                <a onclick="window.location.href='/onlineshop';" style="cursor: pointer;"><i class='bx bx-store '></i></a>
+                <a onclick="window.location.href='/login';" style="cursor: pointer;"><i class='bx bxs-face '></i></a>
+            </div>
+        {{/if}}
+
+</div>
+ <link rel="stylesheet" href="/css/shop.css">
+<script src="/js/logout.js"></script>
+{{> cart}}
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const cartIcon = document.querySelector('.bx-cart');
+        console.log(cartIcon);
+        if (!cartIcon) return;
+        cartIcon.addEventListener('click', (event) => {
+            event.preventDefault();
+            document.body.classList.toggle('showCart');
+        });
+        const closeCartBtn = document.querySelector('.btn .close');
+        console.log(closeCartBtn);
+        if (!closeCartBtn) return;
+        closeCartBtn.addEventListener('click', () => {
+            document.body.classList.remove('showCart');
+        });
+        let listCartHTML = document.querySelector('.cartList');
+        let iconCartSpan = document.querySelector('.numItems');
+        let totalCostElement = document.querySelector('.totalCost');
+        let cart = [];
+
+        const updateCartUI = (cart, totalCost) => {
+            listCartHTML.innerHTML = '';
+            let totalQuantity = 0;
+
+            if (cart.length > 0) {
+                cart.forEach(item => {
+                    totalQuantity += item.quantity;
+                    const itemBox = document.createElement('div');
+                    itemBox.classList.add('itemBox');
+                    itemBox.innerHTML = `
+                    <img src="${item.productId.image}" alt="${item.productId.name}">
+                    <p class="image-text">${item.productId.name}</p>
+                    <p class="image-text">₱${item.productId.price * item.quantity}</p>
+                    <div class="quantity">
+                        <span class="minus" data-id="${item.productId._id}">-</span>
+                        <span>${item.quantity}</span>
+                        <span class="plus" data-id="${item.productId._id}">+</span>
+                    </div>
+                `;
+                    listCartHTML.appendChild(itemBox);
+                });
+            } else {
+                listCartHTML.innerHTML = '<p>Your cart is empty.</p>';
+            }
+
+            iconCartSpan.textContent = totalQuantity;
+            console.log('Total Cost:', totalCost);
+            totalCostElement.textContent = `Total Cost: ₱${totalCost.toFixed(2)}`;
+        };
+        const changeQuantity = async (productId, type) => {
+            try {
+                const response = await fetch('/update-cart', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        productId: productId,
+                        type: type
+                    })
+                });
+                const data = await response.json();
+                if (data.success) {
+                    cart = data.cart;
+                    updateCartUI(cart, data.totalCost);
+                }
+            } catch (error) {
+                console.error('Error updating cart:', error);
+            }
+        };
+        listCartHTML.addEventListener('click', (event) => {
+            const target = event.target;
+            if (target.classList.contains('minus') || target.classList.contains('plus')) {
+                const productId = target.getAttribute('data-id');
+                const type = target.classList.contains('plus') ? 'plus' : 'minus';
+                changeQuantity(productId, type);
+            }
+        });
+    })
+</script>

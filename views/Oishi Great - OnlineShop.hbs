@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Oishi Great - Online Shop</title>
+    <link rel="stylesheet" href="/css/user-address.css">
+    <link rel="stylesheet" href="/css/my-account.css">
+    <link rel="stylesheet" href="/css/shop.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <script src="https://kit.fontawesome.com/e0c28b56a4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script type="text/javascript" src="js/onlineshop.js"></script>
+  
+    {{> header}}
+
+    <div>
+        <div id="upperBox">   
+            <div class="home-intro">
+                <h1>Fresh Water Sales</h1>    
+                <p>Oishi Great's Best products!</p>
+            </div>
+            <div class="home-intro" id="home-intro-image"><img src="/images/clearwater.png"></div>
+        </div>
+    </div>
+
+    <div class="allBoxes">
+        <div class="shoppingBox">
+            
+            <div id="secondBox">
+                <div class="secondBoxText"> 
+                    <h1 class="second-intro">MAIN PRODUCTS</h1>
+                </div>
+
+                <div class="secondBoxImages">
+                    {{#each products}}
+                    <div class="image-container">
+                        <div class="imageBox">
+                            <img src="{{this.image}}" alt="{{this.name}}">
+                            <p class="image-text">{{this.name}}</p>
+                            <p class="image-text">₱{{this.price}}</p>
+                            <button class="button-30" role="button" data-id="{{this._id}}">Add to Cart</button>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> footer}}
+
+</body>
+</html>

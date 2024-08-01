@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <title> Oishi Great - Home </title>
+    <link rel="stylesheet" href="css\edit-account-details.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <script src="https://kit.fontawesome.com/e0c28b56a4.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <script type="text/javascript" src="js/my-account.js">  </script>
+  
+    {{> header}}
+
+    <!-- My Account Section -->
+    <div class="account-container">
+        <div class="account-header">
+            <h1>My Account</h1>
+        </div>
+        <div class="account-content">
+            
+            {{> sidebar}}
+
+            <div class="main-content">
+                <form class="account-form" action="/editaccountdetails" method="POST">
+                    <div class="form-row">
+
+                        <div class="form-group">
+                        <label for="first-name">First name <span class="required" title="required">*</span></label>
+                        <input type="text" id="first-name" name="firstName" value="{{firstName}}">
+                        </div>
+
+                        <div class="form-group">
+                        <label for="last-name">Last name <span class="required" title="required">*</span></label>
+                        <input type="text" id="last-name" name="lastName" value="{{lastName}}">
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="display-name">Display name <span class="required" title="required">*</span></label>
+                        <input type="text" id="display-name" name="username" value="{{username}}">
+                        <p class="description">This will be how your name will be displayed in the account section</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email-address">Email address <span class="required" title="required">*</span></label>
+                        <input type="email" id="email-address" name="email" value="{{email}}">
+                    </div>
+                    
+                    <h2>Password change</h2>
+                    <div class="form-group">
+                        <label for="current-password">Current password (leave blank to leave unchanged)</label>
+                        <input type="password" id="current-password" name="currentPassword" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password">New password (leave blank to leave unchanged)</label>
+                        <input type="password" id="new-password" name="newPassword">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm new password</label>
+                        <input type="password" id="confirm-password" name="confirmPassword">
+                    </div>
+                    
+                    <button type="submit">Save Changes</button>
+                </form>
+
+            </div>                    
+        </div>
+    </div>    
+
+    {{> footer}}
+
+
+</body>
+</html>

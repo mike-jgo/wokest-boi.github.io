@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <title> Oishi Great - Home </title>
+    <link rel="stylesheet" href="css\user-address.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <script src="https://kit.fontawesome.com/e0c28b56a4.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <script type="text/javascript" src="js/my-account.js">  </script>
+  
+    {{> header}}
+
+    <!-- My Account Section -->
+    <div class="account-container">
+        <div class="account-header">
+            <h1>My Account</h1>
+        </div>
+        <div class="account-content">
+            
+            {{> sidebar}}
+
+            <div class="main-content">
+                <h2 id="shipping-address">Shipping Address</h2>
+                <form action="#" method="post" class="address-form">
+                    <div class="name-fields">
+                        <div class="name-field">
+                            <label for="first-name">First name <span class="required" title="Required">*</span></label>
+                            <input type="text" id="first-name" name="first-name" value="" placeholder="Enter your first name" required>
+                        </div>
+                        <div class="name-field">
+                            <label for="last-name">Last name <span class="required" title="Required">*</span></label>
+                            <input type="text" id="last-name" name="last-name" value="" placeholder="Enter your last name" required>
+                        </div>
+                    </div>
+                    
+                    <label for="company-name">Company name (optional)</label>
+                    <input type="text" id="company-name" name="company-name">
+                    
+                    <label for="country-region">Country / Region <span class="required" title="Required">*</span></label>
+                    <input type="text" id="country-region" name="country-region" value="" required>
+                    
+                    <label for="street-address">Street address <span class="required" title="Required">*</span></label>
+                    <input type="text" id="street-address" name="street-address" value="" required>
+
+                    <input type="text" id="apartment-suite" name="apartment-suite" value="" placeholder="Apartment, suite, unit, etc. (optional)">
+                    
+                    <label for="city">City <span class="required" title="Required">*</span></label>
+                    <input type="text" id="city" name="city" value="" required>
+                    
+                    <label for="province">State / County <span class="required" title="Required">*</span></label>
+                    <input type="text" id="state" name="province" value="" required>
+                    
+                    <label for="postal-code">Postal code <span class="required" title="Required">*</span></label>
+                    <input type="number" id="postal-code" name="postal-code" value="" required>
+                    
+                    <button type="submit">SAVE ADDRESS</button>
+                </form>
+            </div>            
+        </div>
+    </div>    
+
+
+    {{> footer}}
+
+
+</body>
+</html>

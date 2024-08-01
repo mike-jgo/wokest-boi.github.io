@@ -1,0 +1,22 @@
+[
+    {
+        "name": "5 GALLONS OF WATER",
+        "price": 200,
+        "image": "./images/5gal.png"
+    },
+    {
+        "name": "1000ml WATER BOTTLE",
+        "price": 100,
+        "image": "./images/1000ml.png"
+    },
+    {
+        "name": "500ml WATER BOTTLE",
+        "price": 40,
+        "image": "./images/500ml.png"
+    },
+    {
+        "name": "350ml WATER BOTTLE",
+        "price": 20,
+        "image": "./images/350ml.png"
+    }
+]

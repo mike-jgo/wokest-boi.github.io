@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <title> Oishi Great - Home </title>
+    <link rel="stylesheet" href="css\user-address.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <script src="https://kit.fontawesome.com/e0c28b56a4.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <script type="text/javascript" src="js/my-account.js">  </script>
+  
+    {{> header}}
+
+    <!-- My Account Section -->
+    <div class="account-container">
+        <div class="account-header">
+            <h1>My Account</h1>
+        </div>
+        <div class="account-content">
+            
+            {{> sidebar}}
+
+            <div class="main-content">
+                <p>The following addresses will be used on the checkout page by default.</p>
+                <div class="address-section">
+                    <div class="address-block">
+                        <h3>BILLING ADDRESS <a class="edit-button" href="/edituseraddress">Edit</a></h3>
+                        <p>First name Last name</p>
+                        <p>Street Address</p>
+                        <p>City</p>
+                        <p>Region</p>
+                        <p>Postal code</p>
+                    </div>
+                    <div class="address-block">
+                        <h3>SHIPPING ADDRESS <a class="edit-button" href="/edituseraddress">Edit</a></h3>
+                        <p>First name Last name</p>
+                        <p>Street Address</p>
+                        <p>City</p>
+                        <p>Region</p>
+                        <p>Postal code</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+
+    {{> footer}}
+
+
+</body>
+</html>

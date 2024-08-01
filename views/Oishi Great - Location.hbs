@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Oishi Great - Location </title>
+    <link rel="stylesheet" href="css\user-address.css">
+    <link rel="stylesheet" href="css\my-account.css">
+    <link rel="stylesheet" href="/css/location.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <script src="https://kit.fontawesome.com/e0c28b56a4.js" crossorigin="anonymous"></script>
+    
+</head>
+
+<body>
+
+   {{> header}}
+    
+    </div>
+
+    <div class="loc-container">
+        <h2> Covered Area for Delivery </h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6315.085747806216!2d121.06053707557982!3d14.614568989234785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7ec21cee72d%3A0x4a3fe0443cc6c15a!2sOishi%20Great%20Water%20Station!5e0!3m2!1sen!2sph!4v1709347150912!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    
+        
+    </div>
+    <div id="order-div">
+        <form method="post" action="https://script.google.com/macros/s/AKfycbxL4ZgKC5zYijdg7JtwFKKX70APJDowMReSatlGQE3eF-ruxJ8Ema62fn2nB09bSsRG2g/exec" name="inquiry-form" onsubmit="return handleSubmit()">
+            <h1>Contact Us</h1>
+            <label for="contact-name">Name</label><br>
+            <input type="text" name="Name" required>
+
+            <label for="contact-number">Contact Number</label><br>
+            <input type="text" name="Contact Number" required>
+            
+            <label for="contact-inquiry">Inquiry</label><br>
+            <textarea name="Inquiry" rows="10"></textarea>
+            
+            <input type="submit" value="Submit" id="submit" required>
+        </form>
+        
+    </div>
+
+    {{> footer}}
+
+    <script src="/js/location.js"></script>
+    <script>
+        function handleSubmit() {
+            alert("Form submitted successfully!");
+            return true; // returning true to allow form submission
+        }
+    </script>
+
+    
+
+</body>
+</html>

@@ -1,0 +1,303 @@
+/* include imports and @ stuff */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.activeb {
+    color: rgb(108, 180, 221);
+}
+
+/* About */
+#topNavBar-container {
+    height: 105px;
+    width: 100%;
+    background-color: rgb(22, 72, 99);    
+    font-family: 'Krona One', sans-serif;
+    display: flex;
+    position: sticky;
+    top: 0;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    padding: 20px 14%;
+}
+
+#logo{
+    width: 75px;
+    height: 75px;
+}
+#tabs-container {
+    display: flex;
+    padding-left: 85px;
+}
+
+#tabs-icon i{
+    font-size: 32px;
+    margin-right: 20px;
+    transition: all .36s ease;
+    color: white;
+}
+
+.nav-tab:hover {
+    cursor: pointer;
+    transform: scale(1.05); /* Scale up the tab on hover */
+}
+.nav-tab {
+    padding: 10px 25px;
+    transition: transform 0.3s ease; /* Add transition for smoother animation */
+}
+
+
+#homeTab {
+    color: white;
+}
+#aboutTab {
+    color: white;
+}
+#locTab {
+    color: white;
+}
+#OLTab {
+    color: white;
+}
+.tabsName {
+    position: relative; /* Ensure the underline is relative to the text */
+    text-decoration: none; /* Remove default underline */
+    transition: font-size 0.3s ease; /* Add transition for font size */
+    font-weight: 600;
+    font-size: large;
+    cursor: pointer;
+}
+.tabsName::after {
+    content: ''; /* Add a pseudo-element for the underline */
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Adjust the position of the underline */
+    width: 0;
+    height: 2px;
+    background-color: #fff; /* Color of the underline */
+    transition: width 0.3s ease; /* Add animation to the underline */
+}
+.tabsName:hover::after {
+    width: 100%; /* Expand the width of the underline on hover */
+}
+
+#content-container{
+    background-color: white;    
+    font-family: 'Krona One', sans-serif;
+    position: sticky;
+    top: 0;
+}
+#history{
+    display: flex;
+}
+#history-content{
+    margin: auto;
+    display: block;
+    max-width: 700px;
+    text-align: center;
+}
+#hsitoText{
+    padding-bottom: 2vh;
+    font-family: "IBM Plex Mono", monospace;
+    font-style: normal;
+    font-weight:700;
+    font-size:55px;
+}
+#history-content p{
+    font-family: "IBM Plex Mono", monospace;
+    font-style: normal;
+    font-size:20px;
+    max-width:900px;
+}
+.line{
+    border-bottom: 500px solid #888;
+}
+#services-container {
+    position: relative; /* Ensure the container is positioned relatively */
+    padding-top: 6vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(221, 242, 253);
+}
+#services-content{
+    margin: auto;
+    display: block;
+    text-align: center; 
+    width: 900px;
+    padding-bottom: 5vh;
+}
+
+#services-content h1{
+    font-family: "IBM Plex Mono", monospace;
+    font-style: normal;
+    font-weight:700;
+    font-size:55px;
+}
+
+#services-content p{
+    font-family: "IBM Plex Mono", monospace;
+    font-style: normal;
+    font-size: 20px;
+}
+#servText{
+    padding-bottom: 2vh;
+}
+#p1{
+    height: 80vh;
+    width: 50vh;
+    padding-left: 15px;
+}
+#p2{
+    height: 80vh;
+    width: 50vh;
+    padding-left: 15px;
+}
+
+#botNavBar-container {
+    height: 110px;
+    width: 100%;
+    background-color: rgb(22, 72, 99);    
+    font-family: 'Krona One', sans-serif;
+    display: flex;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    align-items: absolute;
+    z-index: 10;
+}
+
+
+#botNavBar-container span {
+    display: inline-block;
+    width: 7px; 
+    height: 100px;
+    background-color: white;
+    margin: 5px 10px 0; 
+    border-radius: 50px;
+}
+
+
+#logo-bot{
+    padding-left: 600px;
+}
+#info{
+    display: flex;
+    flex-grow: 1;  
+    color: white;
+}
+#find{
+    color: white;
+    width:15em;
+    text-align:center;
+    padding-top: 8px;
+}
+#addr{
+    padding-top: 10px;
+}
+#contact{
+    color: white;
+    width:10em;
+    text-align:center;
+    padding-top: 8px;
+}
+#num{
+    padding-top: 10px;
+}
+#socials{
+    color: white;
+    width:10em;
+    text-align:center;
+    padding-top: 8px;
+}
+#soc{
+    padding-top: 10px;
+}
+
+
+
+
+.fa-brands {
+    transition: color 0.3s ease;
+    padding-top: 20px;
+    padding-right:4px;
+    font-size:50px;
+}
+
+.fa-brands:hover {
+    color:#1877F2 !important;
+}
+
+/* User icon */
+.user-icon {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown container */
+.dropdown-content {
+    display: none; /* Initially hidden */
+    position: absolute;
+    right: 0;
+    top: 100%; /* Position directly below the user icon */
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1000;
+    opacity: 0; /* Start hidden for fade-in effect */
+    transform: translateY(-10px); /* Slightly moved up to create a smooth entrance */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+/* Show dropdown on hover */
+.user-icon:hover .dropdown-content {
+    display: block; /* Make visible */
+    opacity: 1; /* Fully opaque when hovered */
+    transform: translateY(0); /* Move to final position */
+}
+
+/* Dropdown items */
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f0f0f0;
+    color: #007bff; /* Accent color */
+}
+
+/* Optional: Adjust the user icon on hover */
+.user-icon:hover .bx {
+    color: #007bff !important; /* Accent color for user icon on hover */
+}
+
+.numItems {
+    font-size: medium;
+    font-weight: bold;
+    display: flex;
+    width: 25px;
+    height: 25px;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: 63px;
+}
+
+#tabs-icon{
+    position: relative;
+    display: inline-block;
+}
