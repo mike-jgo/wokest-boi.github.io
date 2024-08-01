@@ -15,5 +15,15 @@
     "mongodb": "^6.8.0",
     "mongoose": "^8.5.1",
     "node-schedule": "^2.1.1"
-  }
+  },
+  "name": "wokest-boi.github.io",
+  "version": "1.0.0",
+  "description": "This is the updated website as a requirement for STSWENG",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
 }
